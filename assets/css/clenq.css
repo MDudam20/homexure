@@ -5907,8 +5907,8 @@ Footer One
   display: flex;
   align-items: center;
   border-bottom: 1px solid #2e3024;
-  padding-bottom: 26px;
-  margin-bottom: 25px;
+  padding-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .footer-one__post-box ul li:last-child {
@@ -5918,12 +5918,13 @@ Footer One
 .footer-one__post-box ul li .img-box {
   position: relative;
   display: block;
-  width: 80px;
+  font-size: 40px;
   border-radius: 3px;
   overflow: hidden;
+  color: #fff;
 }
 
-.footer-one__post-box ul li .img-box img {
+.footer-one__post-box ul li .img-box i {
   width: 100%;
 }
 
@@ -6522,6 +6523,31 @@ Why Choose Two
   position: relative;
   display: block;
 }
+.why-choose-two__top-card{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 4 equal columns */
+  gap: 1px; /* Spacing between items */
+}
+@media (max-width: 1300px) {
+  .why-choose-two__top-card {
+    grid-template-columns: repeat(5, 1fr); /* 2 items per row */
+  }
+}
+@media (max-width: 800px) {
+  .why-choose-two__top-card {
+    grid-template-columns: repeat(4, 1fr); /* 2 items per row */
+  }
+}
+@media (max-width: 650px) {
+  .why-choose-two__top-card {
+    grid-template-columns: repeat(3, 1fr); /* 2 items per row */
+  }
+}
+@media (max-width: 500px) {
+  .why-choose-two__top-card {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  }
+}
 
 .why-choose-two__single {
   position: relative;
@@ -6531,8 +6557,9 @@ Why Choose Two
   margin-bottom: 30px;
   border-radius: 10px;
   text-align: center;
-  padding: 45px 20px 45px;
+  padding: 10px 20px 10px;
   z-index: 1;
+  border: 2px solid #4caf50;
 }
 
 .why-choose-two__single::before {
@@ -6575,8 +6602,8 @@ Why Choose Two
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   background: var(--clenq-black);
   border-radius: 50%;
   border: 1px solid var(--clenq-black2);
@@ -6599,8 +6626,8 @@ Why Choose Two
 }
 
 .why-choose-two__single h2 {
-  font-size: 24px;
-  line-height: 34px;
+  font-size: 20px;
+  line-height: 30px;
   font-weight: 500;
   margin-bottom: 12px;
 }
@@ -7467,7 +7494,7 @@ Cta Three
   display: flex;
   align-items: center;
   background: var(--clenq-primary);
-  padding: 31px 85px 32px;
+  padding: 10px 85px 32px;
   padding-right: 35px;
   border-radius: 10px;
 }
@@ -7475,6 +7502,7 @@ Cta Three
 .cta-three__left {
   position: relative;
   display: block;
+  padding-top: 30px;
 }
 
 .cta-three__left .contact-info {

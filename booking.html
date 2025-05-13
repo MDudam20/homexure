@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login || Homexure</title>
-    <link rel="stylesheet" href="assets/css/login.css">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Home  || Homexure </title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Clenq HTML 5 Template " />
+
     <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
@@ -38,21 +45,79 @@
     <link rel="stylesheet" href="assets/css/clenq-responsive.css" />
     <link rel="stylesheet" href="assets/css/clenq-2.css" />
     <script src="https://kit.fontawesome.com/c80ce35b53.js" crossorigin="anonymous"></script>
-
+     <style>
+    
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .nav-tabs .nav-link {
+      color: #6c757d;
+      border-radius: 10px;
+    }
+    .nav-tabs .nav-link.active {
+      background: #59ff00;
+      color: #000;
+      border: none;
+    }
+    .card {
+      border: 1px solid #929292;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .card span{
+        font-weight: 700;
+        color: #000;
+    }
+    .btn-primary {
+      background: #1a1c1b;
+      border: none;
+      
+    }
+    .btn-primary:hover {
+      background: #59ff00;
+      color: #000;
+    }
+    .btn-danger {
+      background: #ff6b6b;
+      border: none;
+    }
+    .btn-danger:hover {
+      background: #e05656;
+    }
+    .modal-content {
+      border-radius: 15px;
+      border: none;
+    }
+    .modal-header {
+      background: #6c63ff;
+      color: #fff;
+      border-bottom: none;
+    }
+    .modal-footer {
+      border-top: none;
+    }
+  </style>
 </head>
+
 <body class="custom-cursor">
 
-   <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
     <!-- /.preloader -->
-  
+
     <div class="page-wrapper">
 
-      <!--Start Main Header Two-->
+        <!--Start Main Header Two-->
         <header class="main-header main-header-two style3 clearfix">
             <div class="container">
                 <div class="main-header-two__top">
@@ -197,45 +262,171 @@
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
 
-       <section id="reg_login">
-  <div class="container">
-    <div class="user signinBx">
-      <div class="imgBx"><img src="https://res.cloudinary.com/diyp1k5z5/image/upload/v1744874379/login-img_cdeenv.jpg" alt="" /></div>
-      <div class="formBx">
-        <form action="contactus.php" method="post">
-          <h2>Sign In</h2>
-          <input type="text" name="Username" placeholder="Username" required />
-          <input type="password" name="pass" placeholder="Password" required />
-          <input type="submit" name="Login" value="Login" />
-          <p class="signup">
-            Don't have an account ?
-            <a href="#" onclick="toggleForm();">Sign Up.</a>
-          </p>
-        </form>
+      <!-- dashboard start -->
+       <div class="dashboard-container">
+    <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Profile</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false">My Orders</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="logout-tab" data-bs-toggle="tab" data-bs-target="#logout" type="button" role="tab" aria-controls="logout" aria-selected="false">Log Out</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="dashboardTabsContent">
+      <!-- Profile Tab -->
+      <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="card mt-4">
+          <div class="card-body">
+            <h2 class="card-title">Profile Details</h2>
+            <div class="mb-3">Name: <span id="profileName">John Doe</span></div>
+            <div class="mb-3">Email: <span id="profileEmail">john.doe@example.com</span></div>
+            <div class="mb-3">Phone: <span id="profilePhone">123-456-7890</span></div>
+            <div class="mb-3">Address: <span id="profileAddress">123 Main Street, Springfield</span></div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="user signupBx">
-      <div class="formBx">
-        <form action="contactus.php" method="post">
-          <h2>Create an account</h2>
-          <input type="text" name="Username" placeholder="Username" required />
-          <input type="email" name="email" placeholder="Email Address" required />
-          <input type="password" name="crpass" placeholder="Create Password" required />
-          <input type="password" name="conpass" placeholder="Confirm Password" required />
-          <input type="submit" name="signup" value="Sign Up" />
-          <p class="signup">
-            Already have an account ?
-            <a href="#" onclick="toggleForm();">Sign in.</a>
-          </p>
-        </form>
+      <!-- Orders Tab -->
+      <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+        <div class="card mt-4">
+          <div class="card-body">
+            <h2 class="card-title">Current Bookings</h2>
+            <div class="d-flex flex-wrap">
+              <div class="card m-2" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Car Wash</h5>
+                  <p class="card-text"><span>Date:</span> 2025-05-12</p>
+                  <p class="card-text"><span>Time:</span> 11:00</p>
+                  <p class="card-text"><span>Address:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, beatae.</p>
+                  <button class="btn btn-danger" onclick="cancelBooking(this)">Cancel</button>
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Ac Reparing</h5>
+                  <p class="card-text"><span>Date:</span> 2025-05-12</p>
+                  <p class="card-text"><span>Time:</span> 11:00</p>
+                  <p class="card-text"><span>Address:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, beatae.</p>
+                  <p class="card-text">Status: Scheduled</p>
+                  <!-- <button class="btn btn-danger" onclick="cancelBooking(this)">Cancel</button> -->
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Car Wash</h5>
+                  <p class="card-text">Date: 2025-05-12</p>
+                  <p class="card-text">Time: 12:00</p>
+                <p class="card-text"><span>Address:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, beatae.</p>
+
+                  <p class="card-text">Status: Completed</p>
+                  <!-- <button class="btn btn-danger" onclick="cancelBooking(this)">Cancel</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
-      <div class="imgBx"><img src="https://res.cloudinary.com/diyp1k5z5/image/upload/v1744874376/signup-img_daepqz.png" alt="" /></div>
+      <!-- Logout Tab -->
+      <div class="tab-pane fade" id="logout" role="tabpanel" aria-labelledby="logout-tab">
+        <div class="card mt-4 text-center">
+          <div class="card-body">
+            <h2 class="card-title">Log Out</h2>
+            <button class="btn btn-danger">Log Out</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-       </section>
+
+  <!-- Edit Profile Modal -->
+  <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="editName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="editName" value="John Doe">
+          </div>
+          <div class="mb-3">
+            <label for="editEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="editEmail" value="john.doe@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="editPhone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="editPhone" value="123-456-7890">
+          </div>
+          <div class="mb-3">
+            <label for="editAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="editAddress" value="123 Main Street, Springfield">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="saveProfile()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+       <!-- dashboard end -->
 
 
-       <!--Start Footer One-->
+        <!--Start Cta Three-->
+        <section class="cta-three cta-three--five">
+            <div class="container">
+                <div class="cta-three__inner">
+                    
+
+                    <div class="cta-three__right">
+                        <div class="text-box">
+                            <h2>Book Your Cleaning Service Offline.
+                            </h2>
+                            <p>Contact us directly to schedule your cleaning service with ease!</p>
+                        </div>
+
+                        <div class="btn-box">
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="cta-three__left">
+                        <ul class="contact-info">
+                            <li>
+                                <div class="icon-box">
+                                    <span class="icon-phone-call"></span>
+                                </div>
+
+                                <div class="content-box">
+                                    <p>Helpline and Support</p>
+                                    <h3><a href="tel:8805002451">+88 05 00 24 51</a></h3>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="icon-box">
+                                    <span class="icon-chat-circle"></span>
+                                </div>
+
+                                <div class="content-box">
+                                    <p>Helpline and Support</p>
+                                    <h3><a href="mailto:yourmail@email.com">Support@gmail.com</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Cta Three-->
+
+
+        <!--Start Footer One-->
         <footer class="footer-one footer-one--two style3">
             <div class="footer-three__bg" style="background-image: url(assets/images/backgrounds/footer-v3-bg.jpg);">
             </div>
@@ -249,7 +440,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
                             <div class="footer-one__single footer-one__about">
                                 <div class="footer-one__about-logo">
-                                    <a href="index.html"><img src="assets/images/resources/logo-5.png" alt="#"></a>
+                                    <a href="index.html"><img src="assets/images/homexure/white-logo.png" alt="#"></a>
                                 </div>
 
                                 <div class="footer-one__about-text">
@@ -263,7 +454,7 @@
                                     </li>
                                     <li>
                                         <p><img src="assets/images/shapes/footer-v1-shape1.png" alt="#"><a
-                                                href="#">Handyman</a></p>
+                                                href="#">Reapring</a></p>
                                     </li>
                                 </ul>
                             </div>
@@ -282,22 +473,17 @@
 
                                         <li>
                                             <p><img src="assets/images/shapes/footer-v1-shape1.png" alt="#"> <a
-                                                    href="about.html">Cookie Policy</a></p>
+                                                    href="index.html">Home</a></p>
                                         </li>
 
                                         <li>
                                             <p><img src="assets/images/shapes/footer-v1-shape1.png" alt="#"> <a
-                                                    href="about.html">Careers</a></p>
+                                                    href="about.html">About Us</a></p>
                                         </li>
 
                                         <li>
                                             <p><img src="assets/images/shapes/footer-v1-shape1.png" alt="#"> <a
-                                                    href="about.html">Policy</a></p>
-                                        </li>
-
-                                        <li>
-                                            <p><img src="assets/images/shapes/footer-v1-shape1.png" alt="#"> <a
-                                                    href="about.html">About us</a></p>
+                                                    href="services.html">Services</a></p>
                                         </li>
 
                                         <li>
@@ -305,9 +491,9 @@
                                                     href="contact.html">Contact Us</a></p>
                                         </li>
 
-                                        <li>
+                                       <li>
                                             <p><img src="assets/images/shapes/footer-v1-shape1.png" alt="#"> <a
-                                                    href="pricing.html">Pricing & Plans</a></p>
+                                                    href="about.html">Policy Police</a></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -319,30 +505,39 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
                             <div class="footer-one__single footer-one__post">
                                 <div class="title-box">
-                                    <h3>Popular Post</h3>
+                                    <h3>Contact Us</h3>
                                 </div>
 
                                 <div class="footer-one__post-box">
                                     <ul>
-                                        <li>
+                                       <li>
                                             <div class="img-box">
-                                                <img src="assets/images/resources/footer-v1-img1.jpg" alt="#">
+                                                  <span class="icon-phone-call"></span>
                                             </div>
 
                                             <div class="content-box">
-                                                <p><span class="icon-calendar"></span> 02 May 2023</p>
-                                                <h4><a href="blog-details.html">How to Treat Grease Stains <br>
-                                                        the Right Way</a></h4>
+                                                <p> Phone No</p>
+                                                <h4><a href="blog-details.html">+91 2345678912</a></h4>
                                             </div>
                                         </li>
 
                                         <li>
                                             <div class="img-box">
-                                                <img src="assets/images/resources/footer-v1-img2.jpg" alt="#">
+                                                <span class="icon-chat-circle"></span>
                                             </div>
 
                                             <div class="content-box">
-                                                <p><span class="icon-calendar"></span> 05 May 2023</p>
+                                                <p> Gmail</p>
+                                                <h4><a href="blog-details.html">xyz@gmail.com</a></h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="img-box">
+                                                <span class="icon-globe"></span>
+                                            </div>
+
+                                            <div class="content-box">
+                                                <p> Address</p>
                                                 <h4><a href="blog-details.html">How to Remove Limescale <br>
                                                         From Your Toilet</a></h4>
                                             </div>
@@ -420,9 +615,9 @@
 
         </footer>
         <!--End Footer One-->
-    </div>
-    
-   
+
+    </div><!-- /.page-wrapper -->
+
 
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
@@ -480,6 +675,29 @@
     </div>
     <!-- /.search-popup -->
 
+      <!-- Modal for Auto-Detect -->
+    <div class="modal fade" id="autoDetectModal" tabindex="-1" aria-labelledby="autoDetectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="autoDetectModalLabel">Auto-Detect Location</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Would you like to auto-detect your current location?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="detectLocationBtn">
+                        Detect Location <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
 
     <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -511,7 +729,28 @@
 
     <!-- template js -->
     <script src="assets/js/clenq.js"></script>
+    <script>
+    function saveProfile() {
+      const name = document.getElementById('editName').value;
+      const email = document.getElementById('editEmail').value;
+      const phone = document.getElementById('editPhone').value;
+      const address = document.getElementById('editAddress').value;
 
-<script src="assets/js/login.js"></script>
+      document.getElementById('profileName').innerText = name;
+      document.getElementById('profileEmail').innerText = email;
+      document.getElementById('profilePhone').innerText = phone;
+      document.getElementById('profileAddress').innerText = address;
+
+      const modal = bootstrap.Modal.getInstance(document.getElementById('editProfileModal'));
+      modal.hide();
+    }
+
+    function cancelBooking(button) {
+      const card = button.closest('.card');
+      card.remove();
+    }
+  </script>
 </body>
+
+
 </html>
