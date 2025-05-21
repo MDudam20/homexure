@@ -7236,6 +7236,7 @@ Pricing One
   padding: 34px 30px 45px;
   overflow: hidden;
   z-index: 1;
+  height: 550px;
 }
 
 .pricing-one__single .shape1 {
